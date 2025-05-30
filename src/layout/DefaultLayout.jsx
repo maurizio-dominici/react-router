@@ -1,3 +1,13 @@
+import { Outlet } from "react-router-dom";
+import Navbar from "../components/Navbar";
+
 export default function DefaultLayout() {
-  return <h1>Default Layout</h1>;
+  return (
+    <>
+      <Navbar />
+      <main>
+        <Outlet />
+      </main>
+    </>
+  );
 }
