@@ -1,10 +1,11 @@
 // IMPORTS
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import HomePage from "./pages/HomePage";
 import DefaultLayout from "./layout/DefaultLayout";
+import HomePage from "./pages/HomePage";
 import AboutUs from "./pages/AboutUs";
 import Error from "./pages/Error";
 import PostListPage from "./pages/posts/postListPage";
+import PostDetails from "./pages/posts/PostDetails";
 
 export default function App() {
   return (
@@ -19,7 +20,7 @@ export default function App() {
             {/* Rotte che hanno in comune lo stesso path /posts */}
             <Route path="/posts">
               <Route path="" element={<PostListPage />}></Route>
-              {/* <Route path="/:id" element={<PostDetail />}></Route> */}
+              <Route path=":id" element={<PostDetails />}></Route>
             </Route>
 
             {/* Rotta per le pagine non trovate */}
