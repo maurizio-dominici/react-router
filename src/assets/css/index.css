@@ -40,3 +40,10 @@ a {
 .col-1-2 {
   width: calc(100% / 2);
 }
+
+#page-detail {
+  background-color: aquamarine;
+}
+#page-detail img {
+  width: 600px;
+}

@@ -31,7 +31,7 @@ export default function PostListPage() {
   return (
     <div className="container">
       <h1>Posts</h1>
-      <div className="row row-cols-4">{posts.map(renderPosts)}</div>
+      <div className="row row-cols-4 gap-1">{posts.map(renderPosts)}</div>
     </div>
   );
 }
