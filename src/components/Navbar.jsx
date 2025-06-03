@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import navLinks from "../data/navLinks";
 
 export default function Navbar() {
   return (
@@ -20,21 +21,19 @@ export default function Navbar() {
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
-            <li className="nav-item">
-              <NavLink className="nav-link" aria-current="page" to="/">
-                Home
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/content">
-                Content
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/about">
-                About Us
-              </NavLink>
-            </li>
+            {navLinks.map((navLink, i) => {
+              return (
+                <li className="nav-item" key={i}>
+                  <NavLink
+                    className="nav-link"
+                    aria-current="page"
+                    to={navLink.href}
+                  >
+                    {navLink.text}
+                  </NavLink>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </div>
